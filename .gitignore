@@ -1,1 +1,5 @@
+lib/
+Scripts/
+Include/
+__pycache__
 .env
