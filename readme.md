@@ -1,12 +1,12 @@
 ## Instalação de bibliotecas:
 
-`$ pip install -r requirements.txt`
+```shell
+$ pip install -r requirements.txt
+```
 
 ## Run server
 
 > Powershell
-
--   Executar no powershell
 
 ```shell
 $ set FLASK_APP=manage.py
@@ -18,6 +18,18 @@ $ set FLASK_APP=manage.py
 ```
 $ python -m flask run or flask run
 ```
+
+## Run tests
+
+> Powershell
+
+```shell
+$ pytest
+```
+
+## Arquitetura
+
+[whimsical](https://whimsical.com/7oCzG2cZKzQmo4eyTpwfVb)
 
 ### Requerimentos
 
