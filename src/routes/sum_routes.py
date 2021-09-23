@@ -15,7 +15,7 @@ class Sum(Resource, SumController):
     @api.doc('Sum of a and b')
     # Valida o corpo da requisição de acordo com o que foi declarado na model em dto
     @api.expect(_body_sum, validate=True)
-    def get(self):
+    def post(self):
         return self.sum_two_number(body=request.json)
 
 
