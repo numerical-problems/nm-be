@@ -7,6 +7,12 @@ def test_sum_query(client):
     assert data == dict(total=5)
 
 
+def test_invalid_query(client):
+    response = client.get('/sums/query?value1=2')
+    status = response.status
+    assert status == '400 BAD REQUEST'
+
+
 def test_sum_param(client):
     response = client.get('/sums/johndoe')
     data = response.json

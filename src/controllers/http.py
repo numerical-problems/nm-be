@@ -9,4 +9,4 @@ class Http():
         return data, 200
 
     def bad_request(self, message='Invalid Request'):
-        return message, 400
+        return dict(message=message), 400
