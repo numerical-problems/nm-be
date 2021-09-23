@@ -1,7 +1,6 @@
 from flask_restx import Api
 from flask import Blueprint
 from .routes import set_routes
-from flask_cors import CORS
 
 blueprint = Blueprint('api', __name__)
 
