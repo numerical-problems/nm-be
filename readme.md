@@ -1,4 +1,5 @@
 ## Instalação de bibliotecas:
+- Caso instale uma nova biblioteca, adicione ela no arquivo requirements.txt.
 
 ```shell
 $ pip install -r requirements.txt
