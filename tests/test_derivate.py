@@ -2,6 +2,7 @@ from tests.test_config import client
 
 
 def test_drivate_query(client):
-    response = client.get('/derivate/expression=x**3*y+y**3+z?related_to=x')
+    body = dict(expression="3*x**2", related_to="x")
+    response = client.post('/derivate', json=body)
     data = response.json
-    assert data == dict(total=5)
+    assert data == (dict(result="6*x"))
