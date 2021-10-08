@@ -1,4 +1,5 @@
 from flask_restx import Namespace, fields
+from sympy.polys.fields import field
 
 # Dto crie a namespace e declare  o corpo da requisição
 
@@ -15,5 +16,6 @@ class derivationDto:
     api = Namespace('derivation', description='operation of derivation')
     body = api.model('derivation', {
         'expression': fields.String(require=True),
-        'related_to': fields.String(required=True)
+        'related_to': fields.String(required=True),
+        'times': fields.Integer(required=False)
     })
