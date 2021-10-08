@@ -10,3 +10,6 @@ class Http():
 
     def bad_request(self, message='Invalid Request'):
         return dict(message=message), 400
+    
+    def server_error(err):
+        return dict(message=err), 500
