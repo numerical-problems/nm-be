@@ -11,6 +11,14 @@ class SumDto:
         'sum2': fields.Integer(required=True)
     })
 
+class SerieFourierDto:
+    api = Namespace('fourier')
+    body = api.model('fourier', {
+        'first_interval': fields.Integer(required=True),
+        'second_interval': fields.Integer(required=True),
+        'expression': fields.String(required=True),
+        'n': fields.Integer(required=True)
+    })
 
 class derivationDto:
     api = Namespace('derivation', description='operation of derivation')
