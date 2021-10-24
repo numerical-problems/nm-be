@@ -16,8 +16,8 @@ class SerieFourierDto:
     body = api.model(
         "fourier",
         {
-            "first_interval": fields.Integer(required=True),
-            "second_interval": fields.Integer(required=True),
+            "first_interval": fields.Float(required=True),
+            "second_interval": fields.Float(required=True),
             "expression": fields.String(required=True),
             "n": fields.Integer(required=True),
         },
