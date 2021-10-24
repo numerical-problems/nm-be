@@ -1,5 +1,3 @@
-
-
 class Config:
     DEBUG = True
     # Swagger
@@ -8,7 +6,7 @@ class Config:
 
 class DevelopmentConfig(Config):
     DEBUG = True
-    FLASK_ENV = 'development'
+    FLASK_ENV = "development"
 
 
 class TestingConfig(Config):
@@ -21,8 +19,4 @@ class ProductionConfig(Config):
     DEBUG = False
 
 
-config_by_name = dict(
-    dev=DevelopmentConfig,
-    test=TestingConfig,
-    prod=ProductionConfig
-)
+config_by_name = dict(dev=DevelopmentConfig, test=TestingConfig, prod=ProductionConfig)

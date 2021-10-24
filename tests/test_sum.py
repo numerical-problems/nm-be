@@ -2,25 +2,25 @@ from tests.test_config import client
 
 
 def test_sum_query(client):
-    response = client.get('/sums/query?value1=2&value2=3')
+    response = client.get("/sums/query?value1=2&value2=3")
     data = response.json
     assert data == dict(total=5)
 
 
 def test_invalid_query(client):
-    response = client.get('/sums/query?value1=2')
+    response = client.get("/sums/query?value1=2")
     status = response.status
-    assert status == '400 BAD REQUEST'
+    assert status == "400 BAD REQUEST"
 
 
 def test_sum_param(client):
-    response = client.get('/sums/johndoe')
+    response = client.get("/sums/johndoe")
     data = response.json
-    assert data == dict(your_name='johndoe')
+    assert data == dict(your_name="johndoe")
 
 
 def test_sum_body(client):
     body = dict(sum1=1, sum2=2)
-    response = client.post('/sums', json=body)
+    response = client.post("/sums", json=body)
     data = response.json
     assert data == dict(total=3)
