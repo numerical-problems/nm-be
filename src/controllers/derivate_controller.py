@@ -15,7 +15,7 @@ class DerivativeController(Http):
                 result = sym.diff(body["expression"], related_to, times)
                 return self._return_result(result)
             except Exception as e:
-                if str(e).find("Sympify of expression") != -1:
+                if str(e).find("Sympify of expression 'could not parse") != -1:
                     return self.bad_request({"expressionError": "The expression is not valid"})
                 return self.server_error()
         else:

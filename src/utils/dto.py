@@ -34,3 +34,11 @@ class derivationDto:
             "times": fields.Integer(required=False),
         },
     )
+
+
+class integralsDto:
+    api = Namespace("integrals", description="operation of integrals")
+    body = api.model(
+        "integrals",
+        {"expression": fields.String(require=True), "related_to": fields.String(required=True)},
+    )
