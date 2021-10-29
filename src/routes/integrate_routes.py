@@ -14,7 +14,7 @@ class Integrate(Resource, IntegralsController):
         return self.integrate_expression(body=request.json)
 
 
-# @api.route("/successive", strict_slashes=False)
-# class SuccesiveIntegration(Resource, IntegralsController):
-#     def post(self):
-#         return self.successive_derivation(body=request.json)
+@api.route("/limits", strict_slashes=False)
+class IntegrationWithLimit(Resource, IntegralsController):
+    def post(self):
+        return self.integrate_with_limits(body=request.json)

@@ -40,5 +40,11 @@ class integralsDto:
     api = Namespace("integrals", description="operation of integrals")
     body = api.model(
         "integrals",
-        {"expression": fields.String(require=True), "related_to": fields.String(required=True)},
+        {
+            "expression": fields.String(require=True),
+            "related_to": fields.String(required=True),
+            "limits": fields.String(required=False),
+            "superior_limit": fields.Integer(required=False),
+            "inferior_limit": fields.Integer(required=False),
+        },
     )
