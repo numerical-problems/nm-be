@@ -1,11 +1,10 @@
 from flask_restx import Resource
 from flask import request
-from src.utils.dto import derivationDto, integralsDto
+from src.utils.dto import  integralsDto
 from src.controllers.integrals_controller import IntegralsController
 
 
 api = integralsDto.api
-_body_derivate = integralsDto.body
 
 
 @api.route("/", strict_slashes=False)
