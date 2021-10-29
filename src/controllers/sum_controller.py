@@ -2,9 +2,8 @@ from .http import Http
 
 
 class SumController(Http):
-
     def sum_two_number(self, body):
-        total = sum([int(body['sum1']), int(body['sum2'])])
+        total = sum([int(body["sum1"]), int(body["sum2"])])
         return self.ok(dict(total=total))
 
     # parametros opcionais

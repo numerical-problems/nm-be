@@ -1,5 +1,6 @@
 ## Instalação de bibliotecas:
-- Caso instale uma nova biblioteca, adicione ela no arquivo requirements.txt.
+
+-   Caso instale uma nova biblioteca, adicione ela no arquivo requirements.txt.
 
 ```shell
 $ pip install -r requirements.txt
@@ -27,10 +28,6 @@ $ python -m flask run or flask run
 ```shell
 $ pytest
 ```
-
-## Arquitetura
-
-[whimsical](https://whimsical.com/7oCzG2cZKzQmo4eyTpwfVb)
 
 ### Requerimentos
 

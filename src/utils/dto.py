@@ -5,17 +5,32 @@ from sympy.polys.fields import field
 
 
 class SumDto:
-    api = Namespace('sum', description='operations of sum')
-    body = api.model('sum', {
-        'sum1': fields.Integer(required=True),
-        'sum2': fields.Integer(required=True)
-    })
+    api = Namespace("sum", description="operations of sum")
+    body = api.model(
+        "sum", {"sum1": fields.Integer(required=True), "sum2": fields.Integer(required=True)}
+    )
+
+
+class SerieFourierDto:
+    api = Namespace("fourier")
+    body = api.model(
+        "fourier",
+        {
+            "first_interval": fields.Float(required=True),
+            "second_interval": fields.Float(required=True),
+            "expression": fields.String(required=True),
+            "n": fields.Integer(required=True),
+        },
+    )
 
 
 class derivationDto:
-    api = Namespace('derivation', description='operation of derivation')
-    body = api.model('derivation', {
-        'expression': fields.String(require=True),
-        'related_to': fields.String(required=True),
-        'times': fields.Integer(required=False)
-    })
+    api = Namespace("derivation", description="operation of derivation")
+    body = api.model(
+        "derivation",
+        {
+            "expression": fields.String(require=True),
+            "related_to": fields.String(required=True),
+            "times": fields.Integer(required=False),
+        },
+    )
