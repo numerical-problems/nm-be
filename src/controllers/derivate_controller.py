@@ -15,7 +15,7 @@ class DerivativeController(Http):
             return self._return_result(result)
         except Exception as e:
             if str(e).find("Sympify of expression 'could not parse") != -1:
-                return self.bad_request({"expressionError": "The expression is not valid"})
+                return self.bad_request("A expressão é inválida")
             return self.server_error()
 
     def _return_result(self, result):
