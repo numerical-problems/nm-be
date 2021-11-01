@@ -8,8 +8,8 @@ class DerivativeController(Http):
 
     # Derivada
     def derivate_expression(self, body):
-        if not body["related_to"]:
-            return self.bad_request("Verifique se todos os campos estão preenchidos")
+        if not body["related_to"] or int(body["related_to"].isnumeric()) == True:
+            return self.bad_request("Verifique se todos os campos estão preenchidos corretamente")
         related_to = sym.symbols(body["related_to"])
         times = int(body["times"]) if "times" in body else 1
         try:
