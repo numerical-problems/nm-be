@@ -54,7 +54,6 @@ class interpolationDto:
     body = api.model(
         "interpolation",
         {
-            #"coordinates": fields.List(require=true)
-            "coordinates": fields.Float(require=true)
+            "coordinates": fields.String(required=True)
         },
     )
