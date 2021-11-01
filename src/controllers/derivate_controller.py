@@ -19,4 +19,4 @@ class DerivativeController(Http):
             return self.server_error()
 
     def _return_result(self, result):
-        return self.ok({"result": str(result)})
+        return self.ok({"result": str(result).replace("**", "^").replace("*", "")})
