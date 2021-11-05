@@ -1,6 +1,7 @@
 from .http import Http
 import sympy as sym
 from sympy import *
+import math
 
 
 class DerivativeController(Http):
@@ -21,4 +22,7 @@ class DerivativeController(Http):
             return self.server_error()
 
     def _return_result(self, result):
-        return self.ok({"result": str(result).replace("**", "^").replace("*", "")})
+
+        return self.ok(
+            {"result": str(result).replace("**", "^").replace("*", "").replace("sqrt", "√")}
+        )
