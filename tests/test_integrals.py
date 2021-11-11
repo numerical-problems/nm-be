@@ -9,7 +9,7 @@ def test_integrals_query(client):
 
 
 def test_integrals_limit(client):
-    body = dict(expression="2*x**2+1", related_to="x", superior_limit=2, inferior_limit=1)
+    body = dict(expression="2*x**2+1", related_to="x", limit_superior=2, limit_inferior=1)
     response = client.post("/integrals/limits", json=body)
     data = response.json
     assert data == (dict(result="17/3"))
