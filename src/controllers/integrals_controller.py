@@ -19,8 +19,8 @@ class IntegralsController(Http):
         try:
             expression = body["expression"]
             related_to = sym.symbols(body["related_to"])
-            superior_limit = body["superior_limit"]
-            inferior_limit = body["inferior_limit"]
+            superior_limit = body["limit_superior"]
+            inferior_limit = body["limit_inferior"]
             result = sym.integrate(expression, (related_to, inferior_limit, superior_limit))
             return self._return_result(result)
         except Exception as e:
@@ -29,4 +29,6 @@ class IntegralsController(Http):
             return self.server_error()
 
     def _return_result(self, result):
-        return self.ok({"result": str(result)})
+        return self.ok(
+            {"result": str(result).replace("**", "^").replace("*", "").replace("sqrt", "√")}
+        )
