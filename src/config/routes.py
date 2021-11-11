@@ -3,6 +3,7 @@ from src.routes.sum_routes import api as sum_api
 from src.routes.derivate_routes import api as derivate_api
 from src.routes.fourier_routes import api as fourier_api
 from src.routes.integrate_routes import api as integrate_api
+from src.routes.interpolation_routes import api as interpolation_api
 
 
 def set_routes(api: Api) -> Api:
@@ -12,4 +13,5 @@ def set_routes(api: Api) -> Api:
     api.add_namespace(derivate_api, path="/derivate")
     api.add_namespace(fourier_api, path="/fourier")
     api.add_namespace(integrate_api, path="/integrals")
+    api.add_namespace(interpolation_api, path="/interpolation")
     return api

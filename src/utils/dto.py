@@ -48,3 +48,12 @@ class integralsDto:
             "inferior_limit": fields.Integer(required=False),
         },
     )
+
+class interpolationDto:
+    api = Namespace("interpolation", description="operation of polynomial interpolation")
+    body = api.model(
+        "interpolation",
+        {
+            "coordinates": fields.String(required=True)
+        },
+    )
