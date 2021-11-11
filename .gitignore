@@ -2,5 +2,5 @@ lib/
 Scripts/
 Include/
 __pycache__
-env
+.env
 .pytest_cache
