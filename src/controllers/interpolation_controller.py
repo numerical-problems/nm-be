@@ -1,7 +1,6 @@
 from .http import Http
 import numpy as np
 from sympy import *
-from matplotlib import pyplot as plt
 
 class InterpolationController(Http):
     
@@ -41,25 +40,32 @@ class InterpolationController(Http):
       s = "p(x): "
       for a in constantes:
           a = float('%g' % (a))
-          if n == 0: 
-              if a < 0:
-                  s += "- " + str(abs(a))
-              else:
-                  s += str(a)
+          absConstantToString = str(abs(a))
+          constantToString = str(a)
+          if ((absConstantToString == "1.0") and (n != 0)) : 
+            absConstantToString = ""
+            constantToString = ""
           
-          elif n == 1:
+          if a != 0:
+            if n == 0: 
               if a < 0:
-                  s += "- " + str(abs(a)) + "X"
+                  s += "- " + absConstantToString
               else:
-                  s += "+ " + str(a) + "X"
+                  s += constantToString
           
-          else:
-              if a < 0:
-                  s += "- " + str(abs(a)) + "X^" + str(n)
-              else:
-                  s += "+ " + str(abs(a)) + "X^" + str(n)
+            elif n == 1:
+                if a < 0:
+                    s += "- " + absConstantToString + "X"
+                else:
+                    s += "+ " + constantToString + "X"
+            
+            else:
+                if a < 0:
+                    s += "- " + absConstantToString + "X^" + str(n)
+                else:
+                    s += "+ " + absConstantToString + "X^" + str(n)
+            s += " "
           n += 1
-          s += " "
       return s
 
     def polinomio_resultado(self, x, constantes): # resolve o polinomio
@@ -84,17 +90,18 @@ class InterpolationController(Http):
       
       constantes = self.gauss_elimination(a,b,n)
 
-      x= data[:,0] 
-      y= data[:,1] 
-      xMin= np.min(x) 
-      xMax= np.max(x) 
+      # Codigo que gerava o grafico
+      # x= data[:,0] 
+      # y= data[:,1] 
+      # xMin= np.min(x) 
+      # xMax= np.max(x) 
 
-      xx= np.linspace(xMin, xMax, 1000) 
-      yy = self.polinomio_resultado(xx, constantes) 
+      # xx= np.linspace(xMin, xMax, 1000) 
+      # yy = self.polinomio_resultado(xx, constantes) 
 
-      # plt.plot(x, y, 'bo') 
-      # plt.plot(xx, yy) 
-      # plt.show() 
+      # # plt.plot(x, y, 'bo') 
+      # # plt.plot(xx, yy) 
+      # # plt.show() 
 
       return self.polinomio_string(constantes)
     
