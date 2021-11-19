@@ -4,7 +4,7 @@ import math
 
 class CurveFitController(Http):
 
-    def curveFit(arrayX, arrayY):
+    def curveFit(self, arrayX, arrayY):
 
         vectorX = arrayX
         vectorY = arrayY
@@ -77,7 +77,7 @@ class CurveFitController(Http):
 
             while i < len(vet):
                 y = a1 + (a2 * vet[i])
-                string = f"{vet[i]}, {y}"
+                string = f"{vet[i]:.2f}, {y:.2f}"
                 array.append(string)
                 i += 1
             return array
@@ -116,5 +116,5 @@ class CurveFitController(Http):
     def _return_result(self, result):
 
         return self.ok(
-            {"result": result}
+            {"result": "R= " + result}
         )
