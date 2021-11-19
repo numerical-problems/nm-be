@@ -1,10 +1,10 @@
 from flask_restx import Resource
 from flask import request
-from src.utils.dto import CurveFitDto
+from src.utils.dto import curveFitDto
 from src.controllers.curveFit_controller import CurveFitController
 
-api = CurveFitDto.api
-_body_curveFit = CurveFitDto.body
+api = curveFitDto.api
+_body_curveFit = curveFitDto.body
 
 @api.route("/", strict_slashes=False)
 class CurveFit(Resource, CurveFitController):

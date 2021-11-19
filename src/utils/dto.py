@@ -57,3 +57,13 @@ class interpolationDto:
             "coordinates": fields.String(required=True)
         },
     )
+
+class curveFitDto:
+    api = Namespace("curveFit", description="operation of curve fit")
+    body = api.model(
+        "curveFit",
+        {
+            "pointsX": fields.String(required=True),
+            "pointsY": fields.String(required=True),
+        }
+    )
