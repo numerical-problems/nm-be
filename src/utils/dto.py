@@ -57,3 +57,12 @@ class interpolationDto:
             "coordinates": fields.String(required=True)
         },
     )
+    
+class BissectionDto:
+    api = Namespace('bissection',description='bissection metodo')
+    body = api.model(
+        "bissection", 
+        {
+            "expression": fields.String(require=True),
+        },
+    )
