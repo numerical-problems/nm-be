@@ -32,3 +32,7 @@ $ pytest
 ### Requerimentos
 
 -   Python 3.9
+
+### Deploy
+
+-   url: https://nm-be.herokuapp.com/
